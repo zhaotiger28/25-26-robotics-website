@@ -82,7 +82,7 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    /* background-image can be provided inline on the section for override; fallback below */
+    /* old html orideds */
     background: url('images/hero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -137,16 +137,16 @@
     justify-items: center;
     align-items: start;
     padding: 0 20px;
-    /* limit width so horizontal spacing around photos is closer to vertical spacing */
+    /* horizontal and vertical spacing are close now */
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  /* preview variant: center a small number of members horizontally */
+  /* for the home page preview thing */
   .team-grid.team-preview {
-    /* fixed 3-column layout so the middle member is centered above the button */
+    /* center */
     grid-template-columns: repeat(3, 200px);
-    justify-content: center; /* center the whole grid area */
+    justify-content: center;
     gap: 24px;
   }
   
@@ -165,7 +165,7 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
   }
   
-  /* Member photo */
+  /* team inidiv pictures */
   .member-photo {
     width: 100px;
     height: 100px;
@@ -180,8 +180,7 @@
     overflow: hidden;
   }
 
-  /* allow using a background-image on .member-photo for placeholders
-     and ensure it covers the circular area */
+  /* part of the auto set thing*/
   .member-photo[data-img] {
     background-color: transparent;
     background-position: center;
@@ -189,7 +188,7 @@
     background-repeat: no-repeat;
   }
   
-  /* Buttons */
+  /* buttons */
   .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -234,6 +233,28 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 1rem;
     resize: none;
+  }
+
+  .contact-form select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #006400;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    background: white;
+    color: #333;
+  }
+
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
   }
   
   .contact-form button {

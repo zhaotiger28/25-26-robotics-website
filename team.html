@@ -23,128 +23,128 @@
   <section id="teamSection" class="section">
     <h2>Our Team</h2>
     <div class="team-grid">
-      <!-- 5x5 grid: 25 members. Use data-img="path" on .member-photo to set an image later -->
+      <!--5x5 grid-->
       <!-- Row 1 -->
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Aarav Nesargi</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Ahan Jain</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Ayan Jain</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Chloe Tandon</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Ellen Mapes</h4>
         <p>Role</p>
       </div>
 
       <!-- Row 2 -->
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Gabriel De La Torre</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Harshdeep Bommareddy</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Johnny Sewak</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Justin Wu</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Kiran Karthik</h4>
         <p>Role</p>
       </div>
 
       <!-- Row 3 -->
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Knox Smith</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Niam Ghelani</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Raj Reddy</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Sahith Chintapalli</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Samaira Panjiar</h4>
         <p>Role</p>
       </div>
 
       <!-- Row 4 -->
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Sammie Engberg</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Samy Santosh</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Sanay Nesargi</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Sydney Terrell</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Tej Sachdeva</h4>
         <p>Role</p>
       </div>
 
       <!-- Row 5 -->
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Tiger Zhao</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Vedant Subramanian</h4>
         <p>Role</p>
       </div>
       <div class="team-member">
-        <div class="member-photo" data-img>Photo</div>
+        <div class="member-photo" data-img></div>
         <h4>Vihaan Magan</h4>
         <p>Role</p>
       </div>
@@ -173,14 +173,14 @@
     });
   </script>
 
-  <!-- Autoload headshots: map each member H4 to images/teamheadshots/<name>.(jpg|jpeg|png) -->
+  <!--auto put pictures in the thingy-->>
   <script>
     (function() {
       // Config
       const folder = 'images/teamheadshots/';
       const exts = ['.jpg', '.jpeg', '.png'];
 
-      // helpers to produce sensible filename variants from a name string
+      // celan the naems
       function variants(name) {
         const clean = name.trim();
         const v = new Set();
@@ -193,7 +193,7 @@
         return Array.from(v);
       }
 
-      // try to load an image and call back on success/failure
+      // try to load and dont if fail
       function tryLoad(src) {
         return new Promise((resolve, reject) => {
           const img = new Image();
@@ -203,7 +203,7 @@
         });
       }
 
-      // main: find team-member entries and attempt to set a headshot
+      // find the h4 and set the image
       document.addEventListener('DOMContentLoaded', () => {
         const members = document.querySelectorAll('.team-member');
         members.forEach(member => {
@@ -213,25 +213,25 @@
           const name = nameEl.textContent || nameEl.innerText || '';
           const nameVars = variants(name);
 
-          // produce a list of candidate URLs to try, in order
+          // use diff endigns
           const candidates = [];
           nameVars.forEach(v => exts.forEach(ext => candidates.push(folder + v + ext)));
 
-          // sequentially try candidates until one loads
+          // loop through each one
           (async function tryCandidates() {
             for (const url of candidates) {
               try {
                 await tryLoad(url);
-                // set as background and stop
+                // set the background and kick
                 photoEl.style.backgroundImage = `url('${url}')`;
-                // mark attribute so developers can see which file was used
+                // debug
                 photoEl.setAttribute('data-img', url);
                 return;
               } catch (e) {
-                // failed, try next
+                // failed
               }
             }
-            // no image found: leave placeholder
+            // no image -> placeholder
           })();
         });
       });

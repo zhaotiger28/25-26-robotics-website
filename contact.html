@@ -22,11 +22,25 @@
 
   <section id="contactSection" class="section">
     <h2>Contact Us</h2>
-    <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="contact-form">
+    <form id="contactForm" class="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+
+      <!-- replaced email input with subject dropdown -->
+      <label for="subject" class="sr-only">Subject</label>
+      <select name="subject" id="subject" required>
+        <option value="">Subject type...</option>
+        <option value="Mentoring Request">Mentoring Request</option>
+        <option value="General">General</option>
+        <option value="Follow Up">Follow Up</option>
+        <option value="Other">Other</option>
+      </select>
+
       <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+        <button type="submit" class="btn">Send Message</button>
+        <button type="button" id="downloadCsv" class="btn" style="background:#444;color:gold;">download csv test remove later!!!</button>
+        <span id="contactStatus" aria-live="polite" style="margin-left:8px;color:#006400"></span>
+      </div>
     </form>
   </section>
 
@@ -39,6 +53,68 @@
     const navLinks = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+    });
+  </script>
+
+  <script>
+    // Build a CSV row and offer it for download, and append to logs via optional server tool
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      const downloadBtn = document.getElementById('downloadCsv');
+      const status = document.getElementById('contactStatus');
+
+      function csvEscape(s) {
+        if (s == null) return '';
+        s = String(s);
+        if (s.includes(',') || s.includes('\"') || s.includes('\n')) {
+          return '"' + s.replace(/\"/g, '\"\"') + '"';
+        }
+        return s;
+      }
+
+      function buildCsvRow(values) {
+        return values.map(csvEscape).join(',') + '\n';
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const name = fd.get('name');
+        const subject = fd.get('subject');
+        const message = fd.get('message');
+        const timestamp = new Date().toISOString();
+        const row = buildCsvRow([timestamp, name, subject, message]);
+
+        // Offer the CSV as a download with a timestamped filename
+        const blob = new Blob([row], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `contact-${Date.now()}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+
+        status.textContent = 'CSV prepared for download — check your downloads folder.';
+        setTimeout(() => status.textContent = '', 5000);
+      });
+
+      downloadBtn.addEventListener('click', () => {
+        // produce an empty CSV template with headers
+        const header = 'timestamp,name,subject,message\n';
+        const blob = new Blob([header], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `contact-template.csv`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        status.textContent = 'CSV template downloaded.';
+        setTimeout(() => status.textContent = '', 3000);
+      });
     });
   </script>
 </body>
