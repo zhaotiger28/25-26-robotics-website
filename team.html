@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team - Hornet Robotics</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="menu-icon" id="menuToggle">&#9776; MENU</span>
+      <h1>Hornet Robotics</h1>
+    </div>
+    <div class="nav-right" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="#teamSection">Team</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section id="teamSection" class="section">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="member-photo">Photo</div>
+        <h4>Member 1</h4>
+        <p>Role</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">Photo</div>
+        <h4>Member 2</h4>
+        <p>Role</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">Photo</div>
+        <h4>Member 3</h4>
+        <p>Role</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">Photo</div>
+        <h4>Member 4</h4>
+        <p>Role</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hornet Robotics - Team 9045</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
