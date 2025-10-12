@@ -82,6 +82,7 @@
     position: relative;
     height: 100vh;
     width: 100%;
+    /* background-image can be provided inline on the section for override; fallback below */
     background: url('images/hero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -130,10 +131,23 @@
   
   /* Team Grid */
   .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+    padding: 0 20px;
+    /* limit width so horizontal spacing around photos is closer to vertical spacing */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* preview variant: center a small number of members horizontally */
+  .team-grid.team-preview {
+    /* fixed 3-column layout so the middle member is centered above the button */
+    grid-template-columns: repeat(3, 200px);
+    justify-content: center; /* center the whole grid area */
+    gap: 24px;
   }
   
   .team-member {
@@ -164,6 +178,15 @@
     font-size: 0.8rem;
     color: #666;
     overflow: hidden;
+  }
+
+  /* allow using a background-image on .member-photo for placeholders
+     and ensure it covers the circular area */
+  .member-photo[data-img] {
+    background-color: transparent;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   /* Buttons */
@@ -234,8 +257,8 @@
     }
   
     .team-grid {
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
     }
   
     .hero-text h2 {
