@@ -1,11 +1,5 @@
 """
-Flask server for local development.
-- Serves the static site files from the repository root.
-- POST /api/requests accepts JSON {name, subject, message} and appends to logs/requests.csv
-
-Run:
-  py -m venv .venv
-  .venv\Scripts\Activate.ps1
+u have to run ts for the server
   pip install flask
   py tools/server.py
 
