@@ -1,3 +1,3 @@
-for teh contact server
+for the contact server
 1. pip install flask
 2. py .\tools\server.py

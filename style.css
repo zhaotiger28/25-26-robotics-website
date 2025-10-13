@@ -128,6 +128,10 @@
     color: #006400;
     margin-bottom: 40px;
   }
+
+  /* smaller vertical spacing for contact heading and spacing for ig button */
+  #contactSection h2 { margin-bottom: 12px; }
+  .contact-ig { margin-bottom: 40px; }
   
   /* Team Grid */
   .team-grid {
@@ -206,6 +210,20 @@
     transform: translateY(-3px);
     box-shadow: 0 0 15px gold;
   }
+
+  /* Instagram-styled button */
+  .instagram-btn {
+    background: linear-gradient(45deg,#f58529 0%,#dd2a7b 50%,#515bd4 100%);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  .instagram-btn svg { opacity: 0.95 }
   
   /* Footer */
   footer {
