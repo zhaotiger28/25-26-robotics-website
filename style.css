@@ -316,6 +316,22 @@
     gap: 20px;
     padding: 22px;
     align-items: flex-start;
+    transform-origin: center center;
+    animation: modalIn 600ms cubic-bezier(.2,.9,.2,1) forwards;
+  }
+
+  .modal.closing {
+    animation: modalOut 350ms cubic-bezier(.2,.9,.2,1) forwards;
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.96) translateY(8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  @keyframes modalOut {
+    from { opacity: 1; transform: scale(1) translateY(0); }
+    to   { opacity: 0; transform: scale(0.98) translateY(6px); }
   }
 
   .modal .modal-photo {

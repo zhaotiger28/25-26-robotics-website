@@ -180,7 +180,7 @@
       const folder = 'images/teamheadshots/';
       const exts = ['.jpg', '.jpeg', '.png'];
 
-      // celan the naems
+      // clean the naems
       function variants(name) {
         const clean = name.trim();
         const v = new Set();
@@ -276,8 +276,20 @@
       }
 
       function closeModal(){
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden','true');
+        const dialog = modal.querySelector('.modal');
+        if (!dialog) {
+          modal.classList.remove('show');
+          modal.setAttribute('aria-hidden','true');
+          return;
+        }
+        // play closing animation
+        dialog.classList.add('closing');
+        dialog.addEventListener('animationend', function _onend(){
+          dialog.classList.remove('closing');
+          modal.classList.remove('show');
+          modal.setAttribute('aria-hidden','true');
+          dialog.removeEventListener('animationend', _onend);
+        });
       }
 
       // Click a team-member to open
