@@ -1,0 +1,3 @@
+for teh contact server
+1. pip install flask
+2. py .\tools\server.py

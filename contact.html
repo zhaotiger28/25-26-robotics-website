@@ -38,7 +38,7 @@
       <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
       <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
         <button type="submit" class="btn">Send Message</button>
-        <button type="button" id="downloadCsv" class="btn" style="background:#444;color:gold;">download csv test remove later!!!</button>
+        <button type="button" id="downloadCsv" class="btn" style="background:#444;color:gold;">Download Server Log (debug)</button>
         <span id="contactStatus" aria-live="polite" style="margin-left:8px;color:#006400"></span>
       </div>
     </form>
@@ -57,63 +57,44 @@
   </script>
 
   <script>
-    // Build a CSV row and offer it for download, and append to logs via optional server tool
+    // Submit form data to server endpoint /api/requests (Send Message only sends)
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('contactForm');
       const downloadBtn = document.getElementById('downloadCsv');
       const status = document.getElementById('contactStatus');
 
-      function csvEscape(s) {
-        if (s == null) return '';
-        s = String(s);
-        if (s.includes(',') || s.includes('\"') || s.includes('\n')) {
-          return '"' + s.replace(/\"/g, '\"\"') + '"';
-        }
-        return s;
-      }
-
-      function buildCsvRow(values) {
-        return values.map(csvEscape).join(',') + '\n';
-      }
-
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const fd = new FormData(form);
         const name = fd.get('name');
         const subject = fd.get('subject');
         const message = fd.get('message');
-        const timestamp = new Date().toISOString();
-        const row = buildCsvRow([timestamp, name, subject, message]);
 
-        // Offer the CSV as a download with a timestamped filename
-        const blob = new Blob([row], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `contact-${Date.now()}.csv`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-
-        status.textContent = 'CSV prepared for download — check your downloads folder.';
+        status.textContent = 'Sending...';
+        try {
+          const res = await fetch('/api/requests', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, subject, message })
+          });
+          if (!res.ok) throw new Error('Server error');
+          const data = await res.json();
+          if (data && data.success) {
+            status.textContent = 'Message sent and logged.';
+            form.reset();
+          } else {
+            status.textContent = 'Server did not accept the message.';
+          }
+        } catch (err) {
+          console.error(err);
+          status.textContent = 'Failed to send. Server may not be running.';
+        }
         setTimeout(() => status.textContent = '', 5000);
       });
 
       downloadBtn.addEventListener('click', () => {
-        // produce an empty CSV template with headers
-        const header = 'timestamp,name,subject,message\n';
-        const blob = new Blob([header], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `contact-template.csv`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-        status.textContent = 'CSV template downloaded.';
-        setTimeout(() => status.textContent = '', 3000);
+        // debug: download the repository log file
+        window.location.href = 'logs/requests.csv';
       });
     });
   </script>
