@@ -1,5 +1,3 @@
-'run: py.\tools\update_team_names.py'
-
 from pathlib import Path
 import sys
 
@@ -20,12 +18,18 @@ def read_names():
 
 
 def parse_last_first(line):
+    # Accept lines like: Last, First
+    # or: Last, First, 10  (optional grade in third field)
     parts = [p.strip() for p in line.split(',')]
     if len(parts) < 2:
         return None
     last = parts[0]
-    first = ','.join(parts[1:]).strip()
-    return first, last
+    # the rest after the first comma is treated as the first name (may contain commas)
+    first = parts[1]
+    grade = None
+    if len(parts) >= 3:
+        grade = parts[2]
+    return first, last, grade
 
 
 def process_names(lines):
@@ -34,13 +38,40 @@ def process_names(lines):
         p = parse_last_first(line)
         if not p:
             continue
-        first, last = p
+        first, last, grade = p
         if first.lower() in EXCLUDE_FIRST:
             continue
-        parsed.append((first, last))
+        parsed.append((first, last, grade))
     # sort by first name case-insensitively
     parsed.sort(key=lambda t: t[0].lower())
-    return [f"{first} {last}" for first, last in parsed]
+    # format grades when present
+    def fmt_name(entry):
+        first, last, grade = entry
+        base = f"{first} {last}"
+        grade_text = None
+        if grade:
+            import re
+            m = re.search(r"(\d{1,2})", grade)
+            if m:
+                num = int(m.group(1))
+                def ordinal(n):
+                    if 10 <= (n % 100) <= 20:
+                        suffix = 'th'
+                    else:
+                        suffix = {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+                    return f"{n}{suffix}"
+                grade_text = ordinal(num)
+            else:
+                grade_text = grade
+
+        # Return HTML for the <h4> content: name in a .name span and optional .grade span
+        if grade_text:
+            # include a leading space before grade span for separation
+            return f"<span class=\"name\">{base}</span> <span class=\"grade\">{grade_text}</span>"
+        else:
+            return f"<span class=\"name\">{base}</span>"
+
+    return [fmt_name(e) for e in parsed]
 
 
 def update_team_html(new_names):

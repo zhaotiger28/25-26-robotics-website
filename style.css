@@ -165,6 +165,7 @@
     padding: 20px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* clickable cards open modal */
   }
   
   .team-member:hover {
@@ -286,6 +287,66 @@
   @keyframes fadeInUp {
     0% { opacity: 0; transform: translateY(20px);}
     100% { opacity: 1; transform: translateY(0);}
+  }
+
+  /* Modal for team bios */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+  }
+
+  .modal-overlay.show {
+    display: flex;
+  }
+
+  .modal {
+    background: white;
+    color: #222;
+    border-radius: 14px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    display: flex;
+    gap: 20px;
+    padding: 22px;
+    align-items: flex-start;
+  }
+
+  .modal .modal-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    flex: 0 0 180px;
+  }
+
+  .modal .modal-body {
+    flex: 1 1 auto;
+  }
+
+  .modal .modal-body h3 { margin-top: 0; margin-bottom: 6px; }
+
+  .modal .close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: transparent;
+    border: 0;
+    font-size: 1.6rem;
+    color: #222;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    .modal { flex-direction: column; align-items: center; }
+    .modal .modal-photo { width: 140px; height: 140px; }
   }
   
   /* Responsive */
