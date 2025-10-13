@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community & Outreach - Hornet Robotics</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="menu-icon" id="menuToggle">&#9776; MENU</span>
+      <h1>Hornet Robotics</h1>
+    </div>
+    <div class="nav-right" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="community.html">Community</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="section">
+    <h2>Community & Outreach</h2>
+    <p style="max-width:800px;margin:0 auto 24px;">
+      Hornet Robotics is committed to sharing STEM learning with our community. We run workshops, mentor younger students, and partner with local schools to make engineering accessible and fun.
+    </p>
+
+    <p style="max-width:900px;margin:0 auto 36px;color:#444;">
+      Below are photos from recent outreach events. rn its placeholder replace in <code>images/community/</code> with real stuff or update each <code>data-img</code> in the thing and the gallery will show them.
+    </p>
+
+    <div class="gallery">
+      <!-- 8 placeholder items, easy to swap src or data-img -->
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+    </div>
+
+    <p style="text-align:center;margin-top:28px;color:#006400;">Want us to visit your school/team? Contact us via the Contact page.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hornet Robotics - Team 9045</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>

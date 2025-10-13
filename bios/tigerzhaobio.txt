@@ -1,3 +1,1 @@
-Tiger Zhao
-
-Placeholder bio for Tiger Zhao. Replace this with a short paragraph about Tiger's role, interests, and experience on the team.
+live bio pull from \bios\ test .txt file

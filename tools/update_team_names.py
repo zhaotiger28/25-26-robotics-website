@@ -18,13 +18,13 @@ def read_names():
 
 
 def parse_last_first(line):
-    # Accept lines like: Last, First
-    # or: Last, First, 10  (optional grade in third field)
+    # takes in last, first
+    # or last,frist, grade
     parts = [p.strip() for p in line.split(',')]
     if len(parts) < 2:
         return None
     last = parts[0]
-    # the rest after the first comma is treated as the first name (may contain commas)
+    # the rest after the first comma is treated as the first name
     first = parts[1]
     grade = None
     if len(parts) >= 3:

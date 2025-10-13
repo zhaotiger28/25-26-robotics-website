@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#e6f5e6" />
+      <stop offset="1" stop-color="#f6fbf6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)" />
+  <g fill="#cfe7cf" opacity="0.9">
+    <rect x="80" y="80" width="1040" height="640" rx="12" />
+  </g>
+  <g fill="#9fc29f" opacity="0.9">
+    <circle cx="220" cy="200" r="60" />
+    <rect x="320" y="150" width="640" height="360" rx="8" />
+  </g>
+  <text x="50%" y="88%" font-family="JetBrains Mono, monospace" font-size="28" text-anchor="middle" fill="#6b8f6b">Replace images/community/*.jpg with real photos</text>
+</svg>
