@@ -3,7 +3,7 @@ u have to run ts for the server
   pip install flask
   py tools/server.py
 
-Open http://127.0.0.1:8000 in your browser.
+open http://127.0.0.1:8000 in browser
 """
 from flask import Flask, request, send_from_directory, jsonify
 from pathlib import Path
