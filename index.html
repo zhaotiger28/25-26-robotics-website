@@ -70,6 +70,50 @@
     <p>&copy; 2025 Hornet Robotics - Team 9045</p>
   </footer>
 
+  <!-- Particle background (inline to keep single file) -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <script>
+  (function(){
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const config = { count: 60, color: '0,100,0', speed: 0.3, connect: 140 };
+
+    function resize(){
+      canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    }
+
+    class P { constructor(){ this.reset(); } reset(){ this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.vx=(Math.random()-0.5)*config.speed; this.vy=(Math.random()-0.5)*config.speed; this.r = Math.random()*2+0.7; }}
+
+    function init(){ particles = []; for(let i=0;i<config.count;i++) particles.push(new P()); }
+
+    function step(){ ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>canvas.width)p.vx*=-1; if(p.y<0||p.y>canvas.height)p.vy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle = `rgba(${config.color},0.28)`; ctx.fill(); });
+      // connections
+      for(let i=0;i<particles.length;i++){ for(let j=i+1;j<particles.length;j++){ const a=particles[i], b=particles[j]; const dx=a.x-b.x, dy=a.y-b.y; const d=Math.hypot(dx,dy); if(d<config.connect){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle = `rgba(${config.color},${0.18*(1-d/config.connect)})`; ctx.lineWidth=1; ctx.stroke(); } }}
+      requestAnimationFrame(step);
+    }
+
+    function start(){ resize(); init(); step(); }
+    window.addEventListener('resize', resize);
+    if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', start); else start();
+  })();
+  </script>
+
+  <!-- Parallax: subtle vertical translate of hero text on scroll -->
+  <script>
+    (function(){
+      const hero = document.querySelector('.hero');
+      const heroText = document.querySelector('.hero-text');
+      if(!hero || !heroText) return;
+      window.addEventListener('scroll', () => {
+        const t = Math.min(window.scrollY / (hero.offsetHeight||600), 1);
+        heroText.style.transform = `translateY(${t*18}px)`;
+        // slightly move background position for depth
+        hero.style.backgroundPositionY = `${t*30}px`;
+      }, { passive: true });
+    })();
+  </script>
+
   <script src="scrambleanimation.js"></script>
 </body>
 </html>
