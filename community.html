@@ -3,58 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Community & Outreach - Hornet Robotics</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <title>Community - Hornet Robotics | FTC 9045</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="navbar">
-    <div class="nav-left">
-      <span class="menu-icon" id="menuToggle">&#9776; MENU</span>
-      <h1>Hornet Robotics</h1>
-    </div>
-    <div class="nav-right" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="team.html">Team</a>
-      <a href="community.html">Community</a>
-      <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Hornet Robotics</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="community.html">Community</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Community & Outreach</h1>
+    <p>Sharing our passion for STEM with students and schools across Dallas.</p>
+  </header>
+
+  <!-- Main Content -->
   <section class="section">
-    <h2>Community & Outreach</h2>
-    <p style="max-width:800px;margin:0 auto 24px;">
-      Hornet Robotics is committed to sharing STEM learning with our community. We run workshops, mentor younger students, and partner with local schools to make engineering accessible and fun.
-    </p>
+    <div class="container">
+      <div class="community-intro">
+        <h2 class="section-title">Making STEM Accessible</h2>
+        <p class="section-description">
+          Hornet Robotics is committed to sharing STEM learning with our community. We run workshops,
+          mentor younger students, and partner with local schools to make engineering accessible and fun.
+        </p>
+      </div>
 
-    <p style="max-width:900px;margin:0 auto 36px;color:#444;">
-      Below are photos from recent outreach events. rn its placeholder replace in <code>images/community/</code> with real stuff or update each <code>data-img</code> in the thing and the gallery will show them.
-    </p>
+      <div class="community-features">
+        <div class="community-card">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Mentorship</h3>
+          <p>We work with younger FTC and FLL teams to share our knowledge and experience.</p>
+        </div>
+        <div class="community-card">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+          </div>
+          <h3>Workshops</h3>
+          <p>Hands-on STEM workshops at local elementary and middle schools.</p>
+        </div>
+        <div class="community-card">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+            </svg>
+          </div>
+          <h3>School Visits</h3>
+          <p>Bringing our robot to schools to inspire the next generation of engineers.</p>
+        </div>
+      </div>
 
-    <div class="gallery">
-      <!-- 8 placeholder items, easy to swap src or data-img -->
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
-      <div class="gallery-item"><img src="images/placeholder.svg" alt="placeholder"></div>
+      <h3 class="gallery-title">Our Outreach Events</h3>
+      <div class="gallery">
+        <div class="gallery-item"><img src="images/placeholder.svg" alt="Outreach event"></div>
+        <div class="gallery-item"><img src="images/placeholder.svg" alt="Outreach event"></div>
+        <div class="gallery-item"><img src="images/placeholder.svg" alt="Outreach event"></div>
+        <div class="gallery-item"><img src="images/placeholder.svg" alt="Outreach event"></div>
+        <div class="gallery-item"><img src="images/placeholder.svg" alt="Outreach event"></div>
+        <div class="gallery-item"><img src="images/placeholder.svg" alt="Outreach event"></div>
+      </div>
+
+      <div class="community-cta">
+        <p>Want us to visit your school or team?</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      </div>
     </div>
-
-    <p style="text-align:center;margin-top:28px;color:#006400;">Want us to visit your school/team? Contact us via the Contact page.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Hornet Robotics - Team 9045</p>
+    <div class="container">
+      <div class="footer-sponsor">
+        <span>Proudly supported by</span>
+        <img src="https://greenhill.static.amais.com/Wordmarkwhite-731-optimized.png" alt="Greenhill School" class="greenhill-logo">
+      </div>
+      <p>2025 Hornet Robotics - FTC Team 9045</p>
+      <p class="footer-sub">Greenhill School, Addison TX</p>
+    </div>
   </footer>
 
+  <!-- Mobile menu script -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    if (menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
   </script>
+
+  <style>
+    .community-intro {
+      margin-bottom: 60px;
+    }
+    .community-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+    .community-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 40px 32px;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .community-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .community-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--green-primary), var(--green-medium));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 20px rgba(0,100,0,0.25);
+    }
+    .community-icon svg {
+      width: 32px;
+      height: 32px;
+      color: white;
+    }
+    .community-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 12px;
+    }
+    .community-card p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .gallery-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .community-cta {
+      text-align: center;
+      margin-top: 80px;
+      padding: 60px 40px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-primary));
+      border-radius: 24px;
+    }
+    .community-cta p {
+      font-size: 1.35rem;
+      color: white;
+      margin-bottom: 24px;
+    }
+    .community-cta .btn-primary {
+      background: var(--gold);
+      color: var(--green-dark);
+    }
+    .community-cta .btn-primary:hover {
+      background: var(--gold-light);
+    }
+    @media (max-width: 768px) {
+      .community-features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </body>
 </html>

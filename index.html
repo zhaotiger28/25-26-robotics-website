@@ -3,117 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hornet Robotics | Team 9045</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <title>Hornet Robotics | FTC Team 9045</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav class="navbar">
-    <div class="nav-left">
-      <span class="menu-icon" id="menuToggle">&#9776; MENU</span>
-      <h1>Hornet Robotics</h1>
-    </div>
-    <div class="nav-right" id="navLinks">
-      <a href="#about">About</a>
-      <a href="team.html">Team</a>
-      <a href="community.html">Community</a>
-      <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Hornet Robotics</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#features">What We Do</a>
+        <a href="team.html">Team</a>
+        <a href="community.html">Community</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
-  
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-text" >
-      <h2 id="animate-text">Building Robots, Building Futures</h2>
-      <p>Hornet Robotics is FTC Team 9045, Educating students through robotics competitions and STEM education.</p>
-      <a href="#about" class="btn">Learn More</a>
+    <div class="hero-bg">
+      <img src="images/hero.JPG" alt="Hornet Robotics team" class="hero-image">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-tagline">FTC Team 9045</span>
+      <h1 class="hero-title">Building Robots,<br>Building Futures</h1>
+      <p class="hero-subtitle">
+        We're Greenhill School's competitive robotics team. Through engineering,
+        programming, and teamwork, we push the boundaries of what's possible.
+      </p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary">Learn More</a>
+        <a href="team.html" class="btn btn-secondary">Meet the Team</a>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <p>
-      Hornet Robotics is the Greenhill School robotics team. We are passionate about engineering, programming, and innovation. 
-      We compete in FTC robotics competitions, pushing the limits of creativity and teamwork. 
-    </p>
-  </section>
-
-  <!-- Team Preview Section -->
-  <section class="section">
-    <h2>Meet Our Team</h2>
-  <div class="team-grid team-preview">
-      <div class="team-member">
-        <div class="member-photo">Photo</div>
-        <h4>Member 1</h4>
-        <p>Role</p>
-      </div>
-      <div class="team-member">
-        <div class="member-photo">Photo</div>
-        <h4>Member 2</h4>
-        <p>Role</p>
-      </div>
-      <div class="team-member">
-        <div class="member-photo">Photo</div>
-        <h4>Member 3</h4>
-        <p>Role</p>
+  <section id="about" class="section section-about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="images/working-on-robot horizontal.png" alt="Team working on robot">
+        </div>
+        <div class="about-text">
+          <span class="about-label">About Us</span>
+          <h2>Who We Are</h2>
+          <p>
+            Hornet Robotics is Greenhill School's premier robotics team. We compete in FIRST Tech Challenge (FTC)
+            competitions, where we design, build, and program robots to complete complex tasks.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">24</span>
+              <span class="stat-label">Members</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">9045</span>
+              <span class="stat-label">Team Number</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Years Active</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <a href="team.html" class="btn">View Full Team</a>
+  </section>
+
+  <!-- Features Section - Alternating Rows -->
+  <section id="features" class="section section-features">
+    <div class="container">
+      <h2 class="section-title">What We Do</h2>
+      <p class="section-subtitle">Four pillars that drive our success</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-image">
+        <img src="images/CAD-of-robo.png" alt="CAD design of robot">
+      </div>
+      <div class="feature-row-content">
+        <div class="feature-icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Engineering</h3>
+        <p>We design and build competition-ready robots using CAD software, 3D printing, and precision manufacturing techniques. Every component is carefully planned and tested.</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row-reverse">
+      <div class="feature-row-image">
+        <img src="images/competition-photo.png" alt="Competition">
+      </div>
+      <div class="feature-row-content">
+        <div class="feature-icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Competition</h3>
+        <p>We compete at regional and state FTC events throughout Texas, testing our skills against teams from across the region and constantly pushing our limits.</p>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-image">
+        <img src="images/mentoring-call.png" alt="Team collaboration">
+      </div>
+      <div class="feature-row-content">
+        <div class="feature-icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Teamwork</h3>
+        <p>With 24 members across all grades, collaboration and mentorship are at our core. Upperclassmen guide newer members, creating a supportive learning environment.</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row-reverse">
+      <div class="feature-row-image">
+        <img src="images/teaching-1.png" alt="Teaching and outreach">
+      </div>
+      <div class="feature-row-content">
+        <div class="feature-icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Outreach</h3>
+        <p>We mentor younger students and share our passion for STEM with the broader community through workshops, school visits, and hands-on demonstrations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Preview -->
+  <section class="section section-team-preview">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <p class="section-subtitle">The people behind the robots</p>
+
+      <div class="team-preview-grid">
+        <div class="team-preview-card">
+          <div class="team-preview-photo" style="background-image: url('images/teamheadshots/johnnysewak.jpg'); background-size: cover; background-position: center;"></div>
+          <h4>Johnny Sewak</h4>
+          <p>Captain</p>
+        </div>
+        <div class="team-preview-card">
+          <div class="team-preview-photo" style="background-image: url('images/teamheadshots/vedantsubramanian.jpg'); background-size: cover; background-position: center;"></div>
+          <h4>Vedant Subramanian</h4>
+          <p>Captain</p>
+        </div>
+        <div class="team-preview-card">
+          <div class="team-preview-photo" style="background-image: url('images/teamheadshots/sydneyterrell.jpg'); background-size: cover; background-position: center;"></div>
+          <h4>Sydney Terrell</h4>
+          <p>Captain</p>
+        </div>
+      </div>
+
+      <a href="team.html" class="btn btn-primary">View Full Team</a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta">
+    <div class="container">
+      <h2>Interested in Robotics?</h2>
+      <p>Whether you want to join, sponsor, or just learn more, we'd love to hear from you.</p>
+      <a href="contact.html" class="btn btn-primary btn-large">Get in Touch</a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Hornet Robotics - Team 9045</p>
+    <div class="container">
+      <div class="footer-sponsor">
+        <span>Proudly supported by</span>
+        <img src="https://greenhill.static.amais.com/Wordmarkwhite-731-optimized.png" alt="Greenhill School" class="greenhill-logo">
+      </div>
+      <p>2025 Hornet Robotics - FTC Team 9045</p>
+      <p class="footer-sub">Greenhill School, Addison TX</p>
+    </div>
   </footer>
 
-  <!-- Particle background (inline to keep single file) -->
-  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <!-- Mobile menu script -->
   <script>
-  (function(){
-    const canvas = document.getElementById('particleCanvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    const config = { count: 60, color: '0,100,0', speed: 0.3, connect: 140 };
-
-    function resize(){
-      canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-    }
-
-    class P { constructor(){ this.reset(); } reset(){ this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.vx=(Math.random()-0.5)*config.speed; this.vy=(Math.random()-0.5)*config.speed; this.r = Math.random()*2+0.7; }}
-
-    function init(){ particles = []; for(let i=0;i<config.count;i++) particles.push(new P()); }
-
-    function step(){ ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>canvas.width)p.vx*=-1; if(p.y<0||p.y>canvas.height)p.vy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle = `rgba(${config.color},0.28)`; ctx.fill(); });
-      // connections
-      for(let i=0;i<particles.length;i++){ for(let j=i+1;j<particles.length;j++){ const a=particles[i], b=particles[j]; const dx=a.x-b.x, dy=a.y-b.y; const d=Math.hypot(dx,dy); if(d<config.connect){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle = `rgba(${config.color},${0.18*(1-d/config.connect)})`; ctx.lineWidth=1; ctx.stroke(); } }}
-      requestAnimationFrame(step);
-    }
-
-    function start(){ resize(); init(); step(); }
-    window.addEventListener('resize', resize);
-    if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', start); else start();
-  })();
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
   </script>
 
-  <!-- Parallax: subtle vertical translate of hero text on scroll -->
-  <script>
-    (function(){
-      const hero = document.querySelector('.hero');
-      const heroText = document.querySelector('.hero-text');
-      if(!hero || !heroText) return;
-      window.addEventListener('scroll', () => {
-        const t = Math.min(window.scrollY / (hero.offsetHeight||600), 1);
-        heroText.style.transform = `translateY(${t*18}px)`;
-        // slightly move background position for depth
-        hero.style.backgroundPositionY = `${t*30}px`;
-      }, { passive: true });
-    })();
-  </script>
-
-  <script src="scrambleanimation.js"></script>
 </body>
 </html>

@@ -3,66 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Hornet Robotics</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <title>Contact - Hornet Robotics | FTC 9045</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Navigation -->
   <nav class="navbar">
-    <div class="nav-left">
-      <span class="menu-icon" id="menuToggle">&#9776; MENU</span>
-      <h1>Hornet Robotics</h1>
-    </div>
-    <div class="nav-right" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="team.html">Team</a>
-      <a href="community.html">Community</a>
-      <a href="#contactSection">Contact</a>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Hornet Robotics</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="community.html">Community</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
-  <section id="contactSection" class="section">
-    <h2>Contact Us</h2>
-  <div class="contact-ig">
-  <a href="https://instagram.com/greenhillrobotics" target="_blank" rel="noopener noreferrer" class="btn instagram-btn">
-        <!-- Instagram inline SVG icon -->
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;">
-          <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5" />
-          <circle cx="12" cy="12" r="3.2" stroke="white" stroke-width="1.5" />
-          <circle cx="17.5" cy="6.5" r="0.8" fill="white" />
-        </svg>
-        Instagram
-      </a>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Contact Us</h1>
+    <p>Have questions? Want to sponsor us or request a visit? We'd love to hear from you.</p>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-page">
+    <div class="contact-left">
+      <h2>Let's Connect</h2>
+      <p>Whether you're interested in sponsorship, want us to visit your school, or have questions about our team, we're here to help.</p>
+
+      <div class="contact-items">
+        <a href="https://instagram.com/greenhillrobotics" target="_blank" class="contact-item">
+          <div class="item-icon ig">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="3.2" stroke="white" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+            </svg>
+          </div>
+          <div>
+            <span class="item-label">Follow Us</span>
+            <span class="item-value">@greenhillrobotics</span>
+          </div>
+        </a>
+
+        <div class="contact-item">
+          <div class="item-icon loc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <span class="item-label">Location</span>
+            <span class="item-value">Greenhill School, Addison TX</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="item-icon team">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div>
+            <span class="item-label">Team</span>
+            <span class="item-value">FTC Team 9045</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Instagram link (feed removed) -->
+    <div class="contact-right">
+      <form id="contactForm">
+        <div class="form-field">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" placeholder="John Doe" required>
+        </div>
 
-    <form id="contactForm" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
+        <div class="form-field">
+          <label for="subject">What can we help with?</label>
+          <select name="subject" id="subject" required>
+            <option value="">Select a topic...</option>
+            <option value="Mentoring Request">Mentoring Request</option>
+            <option value="Sponsorship">Sponsorship Inquiry</option>
+            <option value="School Visit">School Visit Request</option>
+            <option value="General">General Question</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
 
-      <!-- dropdown thing -->
-      <label for="subject" class="sr-only">Subject</label>
-      <select name="subject" id="subject" required>
-        <option value="">Subject type...</option>
-        <option value="Mentoring Request">Mentoring Request</option>
-        <option value="General">General</option>
-        <option value="Follow Up">Follow Up</option>
-        <option value="Other">Other</option>
-      </select>
+        <div class="form-field">
+          <label for="message">Your Message</label>
+          <textarea name="message" id="message" placeholder="Tell us more..." required></textarea>
+        </div>
 
-      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-        <button type="submit" class="btn">Send Message</button>
-        <button type="button" id="downloadCsv" class="btn" style="background:#444;color:gold;">Download Server Log (debug)</button>
-        <span id="contactStatus" aria-live="polite" style="margin-left:8px;color:#006400"></span>
-      </div>
-    </form>
+        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+        <span id="contactStatus"></span>
+      </form>
+    </div>
   </section>
 
-  
-
   <footer>
-    <p>&copy; 2025 Hornet Robotics - Team 9045</p>
+    <div class="container">
+      <div class="footer-sponsor">
+        <span>Proudly supported by</span>
+        <img src="https://greenhill.static.amais.com/Wordmarkwhite-731-optimized.png" alt="Greenhill School" class="greenhill-logo">
+      </div>
+      <p>2025 Hornet Robotics - FTC Team 9045</p>
+      <p class="footer-sub">Greenhill School, Addison TX</p>
+    </div>
   </footer>
 
   <script>
@@ -70,51 +126,199 @@
     const navLinks = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
     });
   </script>
-  <!-- Instagram feed removed (was client-side loader). -->
 
   <script>
-    // Submit form data to server endpoint /api/requests (Send Message only sends)
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('contactForm');
-      const downloadBtn = document.getElementById('downloadCsv');
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
       const status = document.getElementById('contactStatus');
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const fd = new FormData(form);
-        const name = fd.get('name');
-        const subject = fd.get('subject');
-        const message = fd.get('message');
-
-        status.textContent = 'Sending...';
-        try {
-          const res = await fetch('/api/requests', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, subject, message })
-          });
-          if (!res.ok) throw new Error('Server error');
-          const data = await res.json();
-          if (data && data.success) {
-            status.textContent = 'Message sent and logged.';
-            form.reset();
-          } else {
-            status.textContent = 'Server did not accept the message.';
-          }
-        } catch (err) {
-          console.error(err);
-          status.textContent = 'Failed to send. Server may not be running.';
+      const form = e.target;
+      const fd = new FormData(form);
+      status.textContent = 'Sending...';
+      status.className = 'pending';
+      try {
+        const res = await fetch('/api/requests', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: fd.get('name'),
+            subject: fd.get('subject'),
+            message: fd.get('message')
+          })
+        });
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        if (data && data.success) {
+          status.textContent = 'Message sent!';
+          status.className = 'success';
+          form.reset();
+        } else {
+          throw new Error();
         }
-        setTimeout(() => status.textContent = '', 5000);
-      });
-
-      downloadBtn.addEventListener('click', () => {
-        // debug: download the repository log file
-        window.location.href = 'logs/requests.csv';
-      });
+      } catch {
+        status.textContent = 'Failed to send. Try again.';
+        status.className = 'error';
+      }
+      setTimeout(() => { status.textContent = ''; status.className = ''; }, 5000);
     });
   </script>
+
+  <style>
+    .contact-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-left {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-primary));
+      padding: 80px;
+      color: white;
+    }
+
+    .contact-left h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .contact-left > p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      opacity: 0.9;
+      margin-bottom: 50px;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .contact-item:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateX(8px);
+    }
+
+    .item-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .item-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .item-icon.ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+    .item-icon.loc { background: rgba(255,255,255,0.2); }
+    .item-icon.team { background: var(--gold); }
+
+    .item-label {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    .item-value {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .contact-right {
+      background: var(--gray-50);
+      padding: 80px;
+    }
+
+    .contact-right form {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-field {
+      margin-bottom: 24px;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      margin-bottom: 10px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: white;
+      transition: border-color 0.2s;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: var(--green-primary);
+    }
+
+    .form-field textarea {
+      min-height: 160px;
+      resize: vertical;
+      flex-grow: 1;
+    }
+
+    .contact-right .btn {
+      width: 100%;
+      padding: 18px;
+      margin-top: auto;
+    }
+
+    #contactStatus {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+    #contactStatus.pending { color: var(--gray-600); }
+    #contactStatus.success { color: var(--green-primary); }
+    #contactStatus.error { color: #d32f2f; }
+
+    @media (max-width: 900px) {
+      .contact-page {
+        grid-template-columns: 1fr;
+      }
+      .contact-left,
+      .contact-right {
+        padding: 48px 24px;
+      }
+    }
+  </style>
 </body>
 </html>
